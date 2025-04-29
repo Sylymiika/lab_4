@@ -1,0 +1,485 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Open+Sans:wght@300&display=swap');
+
+:root {
+    --primary-color: #1e2a47;
+    --accent-color: #fd7e14;
+    --text-color: #4a4a4a;
+    --bg-color: #f5f5f5;
+    --shadow: 10px 10px 30px rgba(0, 0, 0, 0.1), -10px -10px 30px rgba(255, 255, 255, 0.3);
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to top, #fdfcfb, #f5f5f5);
+    background-attachment: fixed;
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 40px 0px 0px 0px;
+    position: relative;
+}
+
+.resume-container {
+    max-width: 1100px;
+    margin: auto;
+    background: var(--bg-color);
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.name-title h1 {
+    font-size: 48px;
+    font-family: 'Lora', serif;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    animation: slideIn 1s ease-out;
+}
+
+.name-title h2 {
+    font-size: 20px;
+    color: #666;
+    margin-top: 8px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.photo img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.photo img:hover {
+    transform: scale(1.1);
+}
+
+
+.main-content {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.left-column,
+.right-column {
+    flex: 1;
+    min-width: 280px;
+}
+
+
+.section {
+    background-color: white;
+    /* border-radius: 20px; */
+    box-shadow: var(--shadow);
+    padding: 25px;
+    margin-top: 70px;
+    /* margin-bottom: 20px; */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+}
+
+.section h2 {
+    font-size: 22px;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-family: 'Lora', serif;
+}
+
+.section ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.section ul li {
+    margin-bottom: 10px;
+}
+
+
+/* Отриманні Дані */
+
+.data-container{
+    background-color: white;
+    box-shadow: var(--shadow);
+    padding: 25px;
+}
+
+.data-container h2 {
+    font-size: 22px;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-family: 'Lora', serif;
+}
+
+.data-list {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+/* Стилі для модалки */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+.modal-content {
+    position: relative;
+    background: white;
+    padding: 26px 30px;
+    border-radius: 8px;
+    text-align: center;
+    width: 500px;
+}
+
+.modal-content h2 {
+    font-size: 22px;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-family: 'Lora', serif;
+}
+
+.modal-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 13px;
+      
+}
+
+#feedbackForm{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+        /* margin-bottom: 15px; */
+}
+
+#feedbackForm label{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+
+
+
+
+.submit-button {
+    /* margin-top: ; */
+    margin: 0 auto;
+    width: 120px;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 22px;
+    cursor: pointer;
+    font-size: 16px;
+    background: linear-gradient(135deg, #ff7f00, #ff9f3a);
+    transition: background-color 0.3s;
+}
+
+
+.close-btn{
+
+    position: absolute;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    top: 10px;
+    right: 18px;
+    font-size: 28px;
+
+
+}
+
+
+
+/* Контакти */
+.contact {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.contact:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+    font-size: 24px;
+    font-family: 'Lora', serif;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.contact p {
+    font-size: 16px;
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.contact p:hover {
+    color: var(--primary-color);
+}
+
+.contact i {
+    color: var(--accent-color);
+    margin-right: 15px;
+    font-size: 22px;
+    transition: transform 0.3s ease;
+}
+
+.contact p:hover i {
+    transform: scale(1.2);
+}
+
+.theme-toggle {
+    
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+
+.theme-toggle i {
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle i:hover {
+    transform: scale(1.2);
+}
+
+/* Анімації */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .photo img {
+        margin-top: 15px;
+    }
+
+.footer {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  position: relative;
+}
+
+
+/* Модальне вікно */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 42, 71, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-family: 'Lora', serif;
+  color: var(--primary-color);
+}
+
+.modal-content form input,
+.modal-content form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.modal-content form button {
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#close-modal {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--accent-color);
+}
+
+.footer-info p {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+}
+
+/* Теми */
+
+
+body.dark-theme {
+    background: #1e1e1e;
+    color: #f5f5f5;
+}
+
+body.dark-theme .resume-container {
+    background: #2c2c2c;
+    box-shadow: var(--shadow);
+}
+
+body.dark-theme .section {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+body.dark-theme .name-title h1 {
+    color: #f5f5f5;
+}
+
+body.dark-theme .section h2 {
+    color: var(--accent-color);
+}
+
+body.dark-theme .theme-toggle i {
+    color: #fd7e14;
+}
+
+body.dark-theme .data-container h2{ 
+    color: #fd7e14;
+} 
+
+
+body.dark-theme .data-container { 
+    background-color: #333;
+}
+
+body.dark-theme .contact {
+    background-color: #333;
+}
+
+body.dark-theme .modal-content {
+    background-color: #444;
+    color: #f5f5f5;
+}
+
+/* Example: Adjusting links for dark theme */
+body.dark-theme .contact p:hover {
+    color: #fd7e14;
+}
