@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // After 60 seconds, show modal
   setTimeout(() => {
     showModal();
-  }, 10); // 60000 ms = 1 minute
+  }, 60000); // 60000 ms = 1 minute
 
   function showModal() {
     const modal = document.createElement('div');
